@@ -1,5 +1,6 @@
 
 const express = require('express');
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 const db = require("./db");
@@ -18,7 +19,7 @@ const personRouters = require('./routes/personRoutes');
 app.use('/Person',personRouters);
 const Menu = require('./routes/menuItem');
 app.use('/Menuitem',Menu);
-app.listen(3000,()=>{
+app.listen(PORT,()=>{
     console.log("This server in running on 3000 localhost")
 })
 //This is my second version
